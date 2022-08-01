@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Button from './components/Button';
 import Input from './components/Input';
-import { useState } from 'react';
+// import { useState } from 'react';
 import Tasks from './components/Tasks';
 // import Task from './components/Task';
 import './App.css';
@@ -12,34 +12,6 @@ function App() {
 const Fistup = (e) => {
 console.log(e)
 }
-
-const [tasks, setTasks] = useState([
-    {
-        id: 1,
-        text: 'Hello!',
-        day: "15th jan at 9:00pm",
-        reminder: true,
-    },
-       {
-        id: 2,
-        text: 'How far?!',
-        day: "14th jan at 8:00pm",
-        reminder: true,
-    },
-       {
-        id: 3,
-        text: 'Hiiiii!',
-        day: "15th feb at 9:00pm",
-        reminder: false,
-    },
-       {
-        id: 4,
-        text: 'Sup!',
-        day: "25th feb at 9:00pm",
-        reminder: true,
-    },
-])
-
 
  return (
      <div className="App">
@@ -61,7 +33,6 @@ const [tasks, setTasks] = useState([
     <h4>
       FIST UP AN ACCOUNT WITH US TODAY!
       </h4>
-      <Tasks tasks={tasks} />
   </div>
 )
 } 
