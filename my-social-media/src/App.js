@@ -1,19 +1,23 @@
+import {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Button from './components/Button';
 import Input from './components/Input';
-// import { useState } from 'react';
-import Tasks from './components/Tasks';
-// import Task from './components/Task';
+import BlogNav from './components/BlogNav'
 import './App.css';
+import {Router, Route, Switch} from 'react-router-dom';
+import Create from './components/Create';
+import Home from './components/Home';
 
 
 function App() {
   /*You can add consts here and later use them in your JSX*/
 const Fistup = (e) => {
-console.log(e)
+console.log(e.target)
 }
 
+
  return (
+  <Router>
      <div className="App">
     <Header title='FIST-BUMP' />
     <h3>HAVE A BETTER RELATIONSHIP WITH PEOPLE!</h3>
@@ -33,7 +37,18 @@ console.log(e)
     <h4>
       FIST UP AN ACCOUNT WITH US TODAY!
       </h4>
-  </div>
+       <div>
+         <Switch>
+             <Route path="/create">
+          <Create />
+          </Route>
+          <Route exact path="/">
+          <Home />
+          </Route>
+        </Switch>
+       </div>
+      </div>
+  </Router>
 )
 } 
 

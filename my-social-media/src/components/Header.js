@@ -1,7 +1,5 @@
 import propTypes from 'prop-types';
 
-
-
 const Header = ({title}) => {
   return   (
     <header>
