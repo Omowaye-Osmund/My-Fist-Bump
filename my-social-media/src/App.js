@@ -1,10 +1,12 @@
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 // import {useState, useEffect} from 'react';
-import Header from './components/Header';
 import Button from './components/Button';
+import Header from './components/Header';
 import Input from './components/Input';
 import './App.css';
 import Create from './components/Create';
+import Home from './components/Home';
+import  Blogs from './components/Blogs';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 
 
@@ -16,7 +18,7 @@ console.log(e.target)
 
 
  return (
-  <Router>
+       <BrowserRouter>
      <div className="App">
       <h1>Hello React Developers!</h1>
     <Header title='FIST-BUMP' />
@@ -30,23 +32,27 @@ console.log(e.target)
     <br />
     <br />
     <Button onClick={Fistup} className='btn' text='Fist-In' />
-    <Link to="/Create">Forgot Password</Link>
+    <Link to="/create">Click here!</Link>
+     <Link to="/blog">Click here!</Link>
+    
   <hr />
     <h3>
       DON'T HAVE AN ACCOUNT YET?
       </h3>
+      
     <h4>
       FIST UP AN ACCOUNT WITH US TODAY!
       </h4> 
+      <Blogs />
       </div>
-      <div>
-        <Switch>
-          <Route exact path="/Create">
-          <Create />
-          </Route>
-        </Switch>
-      </div>
-      </Router>
+      <Switch>
+      <Route path="/signup" component={Home} exact/>
+      <Route path="/create" component={Create} />
+      <Route path="/blog">
+        <Blogs title="All your blogs"/>
+      </Route>
+      </Switch>
+   </BrowserRouter>
 )
 } 
 
